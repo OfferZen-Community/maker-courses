@@ -1,0 +1,34 @@
+name: "IoT Robots"
+repo: "github.com/iot_robots"
+
+activities:
+
+  create_an_iot_thing:
+    repo: "github.com/something"
+    summary: "Create a Thing on AWS IoT Cloud"
+    is_prep: true
+
+  do_another_thing:
+    repo: "github.com/something_else"
+    is_prep: "critical"
+
+  some_optional_thing:
+    repo: "github.com/blah"
+
+  some_dependent-thing:
+    repo: "github.com/dsadas"
+    prerequisites:
+      - "do_a_thing"
+
+
+projects:
+
+  projectA:
+    repo: "github.com/project1"
+    prerequisites:
+      - "activity_1"
+      - "activity_2"
+
+  projectB:
+    repo: "github.com/project2"
+
